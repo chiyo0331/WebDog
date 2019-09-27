@@ -1,0 +1,309 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid rgba(0, 0, 0, 0) !important; */
+    box-sizing: border-box;
+}
+.main {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px 0;
+    margin: 60px 0;
+    height: 600px;
+    grid-template-areas: "left right";
+}
+.box .left {
+    grid-area: left;
+    text-align: right;
+    padding-right: 10px;
+}
+.box .right {
+    grid-area: right;
+    text-align: left;
+    padding-left: 10px;
+}
+.box .picture img {
+    width: 100%;
+}
+.box .picture img[src="dog1.jpg"] {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    border: 18px solid white;
+    width: 40%;
+    transform: rotate(15deg);
+    margin-left: 100px;
+    margin-top: 80px;
+}
+.box h1 {
+    font-size: 54px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.box p {
+    font-size: 24px;
+    color: #959595;
+    margin-bottom: 30px;
+    line-height: 2;
+}
+.button {
+    display: inline-block;
+    width: 200px !important;
+    height: 60px !important;
+    line-height: 60px;
+    text-align: center;
+    background-color: indianred;
+    color: white;
+    border-radius: 60px !important;
+    text-decoration: none;
+    font-size: 20px;
+}
+.button:hover {
+    background-color: #333333;
+}
+
+.title {
+    text-align: center;
+    margin: 30px 0;
+}
+.title p {
+    padding: 30px;
+    color: #959595;
+}
+
+.price {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+.price .priceBox {
+    padding: 50px 60px;
+    background-color: rgb(133, 43, 43);
+}
+.price .icon, .price h2, .price h3 {
+    padding: 30px 0;
+}
+.price h3 {
+    font-size: 36px;
+}
+.price h3 span {
+    font-size: 20px;
+    padding-left: 10px;
+}
+.price ul {
+    list-style-position: inside;
+    list-style-image: url('check.png');
+    margin-bottom: 50px;
+    text-align: left;
+}
+.price ul li {
+    padding: 10px;
+}
+.price .pricePremium {
+    background-color: rgb(48, 44, 44);
+}
+.price a {
+    background-color: rgb(48, 44, 44);
+}
+.pricePremium a {
+    background-color: rgb(133, 43, 43);
+}
+.price a:hover {
+    background-color: rgb(38, 34, 34);
+}
+.pricePremium a:hover {
+    background-color: rgb(123, 33, 33);
+}
+.priceBasic ul li:nth-child(n+3), .pricePremium ul li:nth-child(n+5)  {
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+.contactBg {
+    background-color: #eee;
+    padding-bottom: 50px;
+}
+.contact {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 80%;
+    margin: 0 auto;
+    color: #555;
+}
+.contact form {
+    padding: 0 30px;
+}
+.contact form label, .contact form input, .contact form textarea {
+    width: 100%;
+}
+.contact form label, .contact .contactMessage h3 {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 20px;
+}
+.contact form input, .contact form textarea {
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+}
+.contact form input, .contact .contactMessage p {
+    height: 30px;
+}
+.contact form input[type="submit"] {
+    margin-top: 30px;
+}
+
+footer {
+    background-color: rgb(123, 33, 33);
+    padding: 100px 20px;
+}
+.footer {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    color: #ccc
+}
+.footer h3 {
+    color: white;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.footer ul li a {
+    color: #ccc;
+}
+.footer ul {
+    list-style: none;
+}
+.footer ul li {
+    padding: 10px 0;
+}
+.footer .follow a {
+    display: inline-block;
+    width: 30px;
+    padding: 5px;
+}
+.footer .follow a img {
+    width: 100%;
+}
+hr {
+    width: 80%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 50px auto 0 auto;
+}
+footer .copyright {
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .box {
+        height: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "left"
+                             "right";
+    }
+    .box .left, .box .right {
+        text-align: center;
+    }
+    .box:nth-of-type(n+5) .right {
+        grid-area: left;
+    }
+    .box:nth-of-type(n+5) .left {
+        grid-area: right;
+    }
+    .price {
+        grid-template-columns: auto;
+    }
+    .contact {
+        grid-template-columns: 100%;
+    }
+    .footer {
+        grid-template-columns: 100%;
+    }
+
+    .box h1 {
+        font-size: 36px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    .box p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        line-height: 2;
+    }
+    .box .picture img[src="dog1.jpg"] {
+        border: 18px solid white;
+        width: 70%;
+        transform: rotate(15deg);
+        margin-left: 0;
+        margin-top: 80px;
+    }
+    .title h1 {
+        font-size: 24px;
+    }
+    .box .picture {
+        margin-top: 50px;
+    }
+    .box .picture img {
+        width: 150%;
+        transform: translate(-30%)
+    }
+    .price .priceBox {
+        padding: 30px 10px;
+    }
+
+    .contact {
+        text-align: center;
+    }
+    footer {
+        text-align: center;
+    }
+    .nav ul {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .box {
+        height: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "left"
+                             "right";
+    }
+    .box .left, .box .right {
+        text-align: center;
+    }
+    .box:nth-of-type(n+5) .right {
+        grid-area: left;
+    }
+    .box:nth-of-type(n+5) .left {
+        grid-area: right;
+    }
+    .price {
+        grid-template-columns: auto auto;
+    }
+
+    .box .picture {
+        margin-top: 50px;
+    }
+    
+    .nav ul {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+img[alt="www.000webhost.com"] {
+    display: none;
+}
